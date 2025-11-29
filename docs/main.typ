@@ -3,9 +3,8 @@
 
 #import "img.typ"
 
-#include "deps/typsitter-langs/langs.typ"
 
-#show: typsitter.register(pdf-theme, html_support: true)
+
 #show raw: set block(inset: 10pt, radius: 2pt, width: 100%, breakable: false)
 
 #show: it => context if target() == "paged" {
@@ -37,12 +36,6 @@
 }
 
 #hyptyp.resource("/theme.css", read("theme.css"))
-#hyptyp.resource("/typsitter.css", {
-  typsitter.theme-css(dark-theme)
-  "@media (prefers-color-scheme: light) {\n"
-  typsitter.theme-css(light-theme)
-  "\n}"
-})
 
 #hyptyp.resource("/index.html", slug: "/", read("landing.html"))
 
@@ -60,7 +53,6 @@
   ],
 
   head-extra: site => _ => {
-    t.link(rel: "stylesheet", href: "/typsitter.css")
     t.link(rel: "stylesheet", href: "/theme.css")
     img.icons
   }

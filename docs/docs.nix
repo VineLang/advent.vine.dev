@@ -1,25 +1,12 @@
 {
   typix,
   hyptyp,
-  typsitter,
   flake-utils,
   pkgs,
   system,
-  grammars,
 }:
 let
-  typsitter-langs = pkgs.callPackage typsitter.lib.typsitterMkDerivation {
-    typsitterGrammars = {
-      inherit (typsitter.lib.typsitterDefaultGrammars pkgs)
-        bash
-        json
-        toml
-        ;
-      vine = grammars.packages.tree-sitter-vine;
-      ivy = grammars.packages.tree-sitter-ivy;
-    };
-  };
-
+  
   typixLib = typix.lib.${system};
 
   hyptypLib = hyptyp.lib.${system} typixLib;

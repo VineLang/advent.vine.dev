@@ -21,12 +21,8 @@ If you're curious to learn more, join the
 #link("https://discord.gg/bgUPV8KjDv")[Vine Discord server].
 
 #let children = (
-  "starting/starting.typ",
-  "features/features.typ",
-  "tooling/tooling.typ",
-  "compiler/compiler.typ",
-  "ivy_ivm/ivy_ivm.typ",
-)
+    "starting.typ",
+  )
 
 #todos
 

@@ -1,6 +1,5 @@
 
 #import "deps/hyptyp/hyptyp.typ"
-#import "deps/typsitter/typsitter.typ"
 
 #import hyptyp: t
 
@@ -50,13 +49,7 @@
 #let vi_ = (prefix, suffix, raw) => {
   set box(outset: (y: 2pt), inset: (x: 2pt), radius: 2pt)
   set text(font: "Atkinson Hyperlegible Mono")
-  typsitter.render(
-    pdf-theme,
-    block: false, lang: "vine",
-    html_support: true,
-    prefix: prefix, suffix: suffix,
-    raw.text,
-  )
+raw
 }
 
 #let vi = vi_.with("", "")
