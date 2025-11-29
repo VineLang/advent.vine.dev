@@ -6,7 +6,7 @@
   system,
 }:
 let
-  
+
   typixLib = typix.lib.${system};
 
   hyptypLib = hyptyp.lib.${system} typixLib;
@@ -25,14 +25,6 @@ let
 
     virtualPaths = [
       {
-        dest = "docs/deps/typsitter/typsitter.typ";
-        src = typsitter.lib.src;
-      }
-      {
-        dest = "docs/deps/typsitter-langs/";
-        src = typsitter-langs;
-      }
-      {
         dest = "docs/deps/hyptyp";
         src = hyptypLib.hyptyp-typst;
       }
@@ -50,7 +42,6 @@ let
 in
 {
   packages = {
-    inherit typsitter-langs;
     docs = hyptypLib.buildHyptypProject buildArgs;
     docs-pdf = typixLib.buildTypstProject buildArgs;
   };
