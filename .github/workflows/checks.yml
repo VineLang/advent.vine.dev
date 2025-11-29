@@ -1,0 +1,111 @@
+name: Checks
+
+on:
+  pull_request:
+  merge_group:
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dsherret/rust-toolchain-file@v1
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-check-${{ hashFiles('**/Cargo.lock') }}
+      - run: RUSTFLAGS="-D warnings" cargo check --all-targets
+
+  clippy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dsherret/rust-toolchain-file@v1
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-clippy-${{ hashFiles('**/Cargo.lock') }}
+      - run: RUSTFLAGS="-D warnings" cargo clippy --all-targets
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dsherret/rust-toolchain-file@v1
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-test-${{ hashFiles('**/Cargo.lock') }}
+      - run: SNAP_CHECK=1 cargo test
+
+  miri:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dsherret/rust-toolchain-file@v1
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-test-${{ hashFiles('**/Cargo.lock') }}
+      - run: cargo run --bin vine build vine/examples/cat.vi > cat.iv
+      - name: test miri
+        run: |
+          [[ "$(echo 'Hello, miri!' | MIRIFLAGS=-Zmiri-disable-isolation cargo miri run --bin ivy run cat.iv)" == "Hello, miri!" ]]
+
+  fmt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dsherret/rust-toolchain-file@v1
+      - run: cargo fmt --check
+      - run: cargo build --release
+      - uses: dprint/check@v2.2
+
+  cspell:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: streetsidesoftware/cspell-action@v5
+        with:
+          incremental_files_only: false
+          config: ./cspell.json
+          files: |
+            **/*.rs
+            **/*.md
+            **/*.vi
+            **/*.iv
+
+  tree-sitter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hustcer/setup-nu@v3
+        with:
+          version: "0.105.1"
+      - uses: tree-sitter/setup-action@v2
+        with:
+          install-lib: false
+      - run: nu test.nu
+        working-directory: lsp/tree-sitter-vine
