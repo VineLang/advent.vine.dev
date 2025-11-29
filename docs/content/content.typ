@@ -18,6 +18,7 @@ For those who enjoy @leaderboards[leaderboards], we also have a friendly competi
 
 #let children = (
   "leaderboards/leaderboards.typ",
+  "days/days.typ",
 )
 
 #todos
