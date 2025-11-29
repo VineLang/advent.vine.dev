@@ -42,7 +42,7 @@
 #img.resources
 
 #show: hyptyp.show-site(
-  root: "docs.typ",
+  root: "content/content.typ",
 
   root-slug: "/docs/",
 
