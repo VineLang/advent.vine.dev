@@ -12,7 +12,7 @@ let
   hyptypLib = hyptyp.lib.${system} typixLib;
 
   commonArgs = {
-    typstSource = "syt/main.typ";
+    typstSource = "syt/root.typ";
 
     typstOpts = {
       features = [ "html" ];
