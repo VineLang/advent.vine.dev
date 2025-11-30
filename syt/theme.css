@@ -1,4 +1,3 @@
-
 :root {
   --theme: light-dark(#169646, #46c676);
 
@@ -29,7 +28,17 @@ code.ts {
 .todo {
   color: red;
   font-style: italic;
+
   &:target {
     font-weight: bold;
+  }
+}
+
+#sidebar,
+.children {
+  li::before {
+    content: "·";
+    font-weight: 900;
+    font-family: "Atkinson Hyperlegible Mono";
   }
 }
