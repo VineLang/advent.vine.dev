@@ -1,4 +1,5 @@
 #import "/data/data.typ": *
+#import "/lib.typ": *
 
 #let theme = rgb("#46c676")
 #let cB = link("https://centibel.fyi")[ cB]
@@ -9,8 +10,9 @@
 
 #let best = (best, got, unit: []) => {
   if got == best [
-    #set text(fill: theme)
-    #got#unit
+    #t.span(class:"best")[
+      #got#unit
+    ]
   ] else [
     #got#unit
   ]

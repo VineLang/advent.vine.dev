@@ -55,3 +55,7 @@ table {
   border-collapse: collapse;
   margin: 4ex 0;
 }
+
+span.best {
+  color: #46c676;
+}
