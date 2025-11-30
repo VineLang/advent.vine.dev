@@ -46,5 +46,6 @@ We'll update the leaderboard with the latest stats when we can throughout the da
 #let children = (
   "overall.typ",
   "days/days.typ",
+  "persons/persons.typ",
 )
 
