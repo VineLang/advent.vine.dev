@@ -27,20 +27,47 @@
           inherit system;
         };
 
-        syt = pkgs.callPackage ./syt.nix {
-          inherit
-            system
-            pkgs
-            flake-utils
-            typix
-            hyptyp
-            ;
+        typixLib = typix.lib.${system};
+        hyptypLib = hyptyp.lib.${system} typixLib;
+
+        commonArgs = {
+          typstSource = "site/hyp.typ";
+
+          typstOpts = {
+            features = [ "html" ];
+          };
+
+          virtualPaths = [
+            {
+              dest = "site/deps/hyptyp";
+              src = hyptypLib.hyptyp-typst;
+            }
+          ];
+        };
+
+        watchArgs = commonArgs // { };
+
+        buildArgs = commonArgs // {
+          src = pkgs.lib.fileset.toSource {
+            root = ./.;
+            fileset = ./site;
+          };
         };
       in
-      builtins.foldl' pkgs.lib.attrsets.recursiveUpdate
-        {
-          formatter = pkgs.nixfmt-tree;
-        }
-        [ syt ]
+      {
+        formatter = pkgs.nixfmt-tree;
+
+        packages = rec {
+          default = site;
+          site = hyptypLib.buildHyptypProject buildArgs;
+        };
+
+        apps = rec {
+          default = site;
+          site = flake-utils.lib.mkApp {
+            drv = hyptypLib.watchHyptypProject watchArgs;
+          };
+        };
+      }
     );
 }

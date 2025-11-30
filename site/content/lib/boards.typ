@@ -1,21 +1,19 @@
 #import "/data/data.typ": *
 #import "/lib.typ": *
 
-#let theme = rgb("#46c676")
-#let cB = link("https://centibel.fyi")[ cB]
+// #let cB = [ #link("https://centibel.fyi")[cB]]
+#let cB = [ cB]
+
+#let show_day = (day) => {
+  ref(label("day_" + day), supplement: [#day])
+}
 
 #let show_person = (person) => {
-  link(persons.at(person).repo)[#person]
+  ref(label("person_" + person), supplement: [#person])
 }
 
 #let best = (best, got, unit: []) => {
-  if got == best [
-    #t.span(class:"best")[
-      #got#unit
-    ]
-  ] else [
-    #got#unit
-  ]
+  t.span(class: if got == best { "best" } else { "" })[#got#unit]
 }
 
 #let board_overall_days() = [
@@ -26,7 +24,7 @@
     align: right,
     table.header([Day], [Solves], [Best Total], [Best Depth], [Speedup]),
     ..days.pairs().map(((day, stats)) => (
-      [#day],
+      [#show_day(day)],
       [#stats.solves.keys().len()],
       [#stats.best_total],
       [#stats.best_depth],
@@ -78,7 +76,7 @@
     align: right,
     table.header([Day], [Total], [Depth], [Speedup]),
     ..stats.solves.pairs().map(((day, (total, depth))) => (
-      day,
+      show_day(day),
       best(days.at(day).best_total, total),
       best(days.at(day).best_depth, depth),
       best(days.at(day).best_speedup, speedup(total, depth), unit: cB),
