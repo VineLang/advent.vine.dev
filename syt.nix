@@ -12,7 +12,7 @@ let
   hyptypLib = hyptyp.lib.${system} typixLib;
 
   commonArgs = {
-    typstSource = "docs/main.typ";
+    typstSource = "syt/main.typ";
 
     typstOpts = {
       features = [ "html" ];
@@ -25,7 +25,7 @@ let
 
     virtualPaths = [
       {
-        dest = "docs/deps/hyptyp";
+        dest = "syt/deps/hyptyp";
         src = hyptypLib.hyptyp-typst;
       }
     ];
