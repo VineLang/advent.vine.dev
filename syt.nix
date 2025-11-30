@@ -42,15 +42,15 @@ let
 in
 {
   packages = {
-    docs = hyptypLib.buildHyptypProject buildArgs;
-    docs-pdf = typixLib.buildTypstProject buildArgs;
+    syt = hyptypLib.buildHyptypProject buildArgs;
+    syt-pdf = typixLib.buildTypstProject buildArgs;
   };
 
   apps = {
-    docs = flake-utils.lib.mkApp {
+    syt = flake-utils.lib.mkApp {
       drv = hyptypLib.watchHyptypProject watchArgs;
     };
-    docs-pdf = flake-utils.lib.mkApp {
+    syt-pdf = flake-utils.lib.mkApp {
       drv = typixLib.watchTypstProject watchArgs;
     };
   };

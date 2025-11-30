@@ -27,7 +27,7 @@
           inherit system;
         };
 
-        docs = pkgs.callPackage ./docs/docs.nix {
+        syt = pkgs.callPackage ./syt.nix {
           inherit
             system
             pkgs
@@ -41,6 +41,6 @@
         {
           formatter = pkgs.nixfmt-tree;
         }
-        [ docs ]
+        [ syt ]
     );
 }
