@@ -6,7 +6,7 @@ Participants @compete[compete] to solve each day's puzzle, submit their best @re
 
 #let children = (
   "how-to-compete.typ",
-  "measuring-results.typ",
+  "performance-results.typ",
   "leaderboards.typ",
 )
 
