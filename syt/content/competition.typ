@@ -1,6 +1,6 @@
 #import "/lib.typ": *
 
-= Leaderboards <leaderboards>
+= AoV Competition <competition>
 
 Advent of Vine also includes a friendly competition to solve each day's puzzle as efficiently as possible.
 
@@ -44,6 +44,7 @@ Performance
 We'll update the leaderboard with the latest stats when we can throughout the day. Feel free to post new statistics if you improve your solution.
 
 #let children = (
-  "lb-orig.typ",
+  "overall.typ",
+  "days/days.typ",
 )
 

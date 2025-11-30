@@ -1,6 +1,6 @@
 #import "/lib.typ": *
-#import "/leaderboards.typ": *
+#import "/data/boards.typ": *
 
 = Day 08
 
-#leaderboard_day("8")
+#board_day("8")

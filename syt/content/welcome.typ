@@ -12,13 +12,13 @@ Advent of Vine is a small event for anyone who wants to try doing #link("https:/
 
 == Interaction Competition
 
-For those who enjoy @leaderboards[leaderboards], we also have a friendly competition to solve each day's puzzle as efficiently as possible.
+We also have a @competition[friendly AoV competition] to solve each day's puzzle as efficiently as possible.
 
 *_Merry Vineïng!_*
 
 #let children = (
-  "leaderboards/leaderboards.typ",
-  "days/days.typ",
+  "get-started.typ",
+  "competition.typ",
 )
 
 #todos
