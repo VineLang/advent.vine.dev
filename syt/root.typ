@@ -37,16 +37,16 @@
 
 #hyptyp.resource("/theme.css", read("theme.css"))
 
-#hyptyp.resource("/index.html", slug: "/", read("landing.html"))
-
 #img.resources
 
 #show: hyptyp.show-site(
   root: "content/content.typ",
 
-  root-slug: "/docs/",
+  root-slug: "/",
 
-  path-to-slug: site => path => "/docs" + (hyptyp.defaults.path-to-slug)(site)(path),
+  path-to-slug: site => path => (hyptyp.defaults.path-to-slug)(site)(
+      path.trim("/content", at: alignment.start)
+    ),
 
   sidebar-header: site => _ => [
     #t.a(class: "logo", href: "/")[#t.img(class: "logo", src: "/logo.svg")]
