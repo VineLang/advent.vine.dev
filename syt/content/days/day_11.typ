@@ -1,5 +1,5 @@
 #import "/lib.typ": *
-#import "/data/boards.typ": *
+#import "../lib/boards.typ": *
 
 = Day 11
 

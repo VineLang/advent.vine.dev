@@ -1,4 +1,4 @@
-#import "data.typ": *
+#import "/data/data.typ": *
 
 #let theme = rgb("#46c676")
 #let cB = link("https://centibel.fyi")[ cB]
@@ -15,8 +15,6 @@
     #got#unit
   ]
 }
-
-= Overall
 
 #let board_overall_days() = [
   #let best_day_speedup = calc.max(..days.values().map(stats => stats.speedup))
@@ -54,7 +52,6 @@
   )
 ]
 
-= Days
 
 #let board_day(day) = [
   #let stats = days.at(day)
@@ -71,8 +68,6 @@
   )
 ]
 
-
-= Users
 
 #let board_person(person) = [
   #let stats = persons.at(person)
