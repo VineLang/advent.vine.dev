@@ -1,7 +1,7 @@
 #import "/lib.typ": *
 #import "/data/boards.typ": *
 
-= Overall Leaderboard
+= Overall
 
 #board_overall_days()
 

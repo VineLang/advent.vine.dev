@@ -1,8 +1,15 @@
 #import "/lib.typ": *
 
-= Getting Started
+= Getting Started <start>
 
-- Follow the #link("https://vine.dev/docs/starting/installation")[installation instructions] to install Vine.
-- You can check out the #link("https://vine.dev/docs/")[Vine docs] to learn the language.
-- Fork the #link("https://github.com/VineLang/AoV-2025/")[template repo] to get started on the puzzles.
+== Install Vine
+Follow the #link("https://vine.dev/docs/starting/installation")[installation instructions] to install Vine.
+== Use the Template Repo
+Fork the #link("https://github.com/VineLang/AoV-2025/")[template repo] to get started on the puzzles.
+== Learn Vine
+Take a look at:
+- #link("https://github.com/VineLang/vine/tree/main/vine/examples")[Vine examples]
+- #link("https://vine.dev/docs/features/")[Vine docs]
+- #link("https://vine.dev/docs/tooling/")[Vine tooling]
+- #link("https://discord.gg/bgUPV8KjDv")[Vine Discord server]
 

@@ -1,6 +1,6 @@
 #import "/lib.typ": *
 
-= Daily Leaderboards
+= Daily
 
 
 *_Merry Vineïng!_*
