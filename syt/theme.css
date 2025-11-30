@@ -42,3 +42,16 @@ code.ts {
     font-family: "Atkinson Hyperlegible Mono";
   }
 }
+
+table th,
+table td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  padding: .5ex .5em;
+  text-align: right;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 4ex 0;
+}
