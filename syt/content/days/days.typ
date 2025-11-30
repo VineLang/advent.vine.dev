@@ -2,9 +2,6 @@
 
 = Daily
 
-
-*_Merry Vineïng!_*
-
 #let children = (
   "day_01.typ",
   "day_02.typ",
