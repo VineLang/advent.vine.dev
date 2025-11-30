@@ -40,7 +40,7 @@
 #img.resources
 
 #show: hyptyp.show-site(
-  root: "content/content.typ",
+  root: "content/welcome.typ",
 
   root-slug: "/",
 
