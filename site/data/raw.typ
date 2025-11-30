@@ -1,11 +1,9 @@
 
 #let persons = (
-  "XYZ": "",
-  "ABC": "",
+  "T6": "https://github.com/tjjfvi/AoV-2025",
 )
 
 #let data = (
-  ("ABC", "0", 1000, 100),
-  ("XYZ", "0", 400, 200),
+  ("T6", "1", 1183150, 215937),
 )
 
