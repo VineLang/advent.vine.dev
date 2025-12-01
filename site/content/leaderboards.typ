@@ -4,8 +4,6 @@
 
 _(Leaderboards are updated when possible throughout the day.)_
 
-_(All data is currently placeholder.)_
-
 #let children = (
   "overall.typ",
   "days/days.typ",
