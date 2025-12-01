@@ -11,7 +11,8 @@ First, get ready:
 When you solve a day's puzzle with your official Advent of Code input:
   - push your solution to your public git repo
   - run your solution on your official puzzle input
-  - post your statistics to that day's thread, and ping the `@AoV` role
+  - post your statistics to the Statistics thread:
+    #t.img(src: "/example-stats.png", style: "width: 600px; max-width: 100%")
 
 We'll update the leaderboard with the latest stats when we can throughout the day.
 Feel free to post new statistics if you improve your solution.

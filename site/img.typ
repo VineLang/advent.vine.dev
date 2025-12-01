@@ -25,6 +25,7 @@
   "/mstile-150x150.png",
   "/mstile-310x150.png",
   "/mstile-310x310.png",
+  "/example-stats.png",
 ) {
   hyptyp.resource(img, read("img" + img, encoding: none))
 }
