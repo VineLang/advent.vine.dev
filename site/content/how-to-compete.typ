@@ -14,6 +14,9 @@ When you solve a day's puzzle with your official Advent of Code input:
   - post your statistics to the Statistics thread:
     #t.img(src: "/example-stats.png", style: "width: 600px; max-width: 100%")
 
+Your solution should be one program that outputs the answer to Part 1 and Part 2.
+The statistics will measure the time to compute both results.
+
 We'll update the leaderboard with the latest stats when we can throughout the day.
 Feel free to post new statistics if you improve your solution.
 
