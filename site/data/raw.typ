@@ -4,6 +4,7 @@
   "vjjft": "https://github.com/vjjft/aov-2025",
   "enricozb": "https://github.com/enricozb/AoV-2025",
   "Nils": "https://github.com/nilscrm/aov-2025",
+  "stevenhuyn": "https://github.com/stevenhuyn/advent-vine",
 )
 
 #let data = (
@@ -15,5 +16,8 @@
   ("Nils", "1", 1088581, 199356),
   ("Nils", "2", 2167348845, 2126128),
   ("T6", "3", 8633705, 227134),
+  ("vjjft", "3", 7995310, 227648),
+  ("stevenhuyn", "1", 1788254, 253883),
+  ("stevenhuyn", "2", 12195262, 2625440),
 )
 
