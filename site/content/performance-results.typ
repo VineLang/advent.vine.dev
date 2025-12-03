@@ -3,9 +3,9 @@
 = Performance Results <results>
 
 We'll use three statistics as the performance results of a solution:
-- *Total (interactions):* represents the sequential performance
-- *Depth (interactions):* represents the best-possible parallel performance
-- *Speedup (#link("https://centibels.fyi")[cB]):* _(the ratio of total to depth reported in #link("https://centibels.fyi")[centibels])_ shows how much faster a parallel processor could execute the program as compared to a sequential processor 
+- *`Total` (interactions):* represents the sequential performance
+- *`Depth` (interactions):* represents the best-possible parallel performance
+- *`Speedup` (#link("https://centibels.fyi")[cB]):* _(the ratio of `Total` to `Depth` reported in #link("https://centibels.fyi")[centibels])_ shows how much faster a parallel processor could execute the program as compared to a sequential processor 
 
 To get the statistics necessary for the performance results, solutions must be run with `--depth`; the statistics should look similar to:
 ```

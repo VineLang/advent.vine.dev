@@ -22,7 +22,7 @@
   #table(
     columns: 5,
     align: right,
-    table.header([Day], [Solves], [Best Total], [Best Depth], [Speedup]),
+    table.header([Day], [Solves], [Best `Total`], [Best `Depth`], [`Speedup`]),
     ..days.pairs().map(((day, stats)) => (
       [#show_day(day)],
       [#stats.solves.keys().len()],
@@ -41,7 +41,7 @@
   #table(
     columns: 5,
     align: right,
-    table.header([User], [Solves], [Total Records], [Depth Records], [Best Speedup]),
+    table.header([User], [Solves], [`Total` Records], [`Depth` Records], [Best `Speedup`]),
     ..persons.pairs().map(((person, stats)) => (
       [#show_person(person)],
       [#best(days.keys().len(), stats.solves.keys().len())],
@@ -58,7 +58,7 @@
   #table(
     columns: 4,
     align: right,
-    table.header([User], [Total], [Depth], [Speedup]),
+    table.header([User], [`Total`], [`Depth`], [`Speedup`]),
     ..stats.solves.pairs().map(((person, (total, depth))) => (
       show_person(person),
       best(stats.best_total, total),
@@ -74,7 +74,7 @@
   #table(
     columns: 4,
     align: right,
-    table.header([Day], [Total], [Depth], [Speedup]),
+    table.header([Day], [`Total`], [`Depth`], [`Speedup`]),
     ..stats.solves.pairs().map(((day, (total, depth))) => (
       show_day(day),
       best(days.at(day).best_total, total),
