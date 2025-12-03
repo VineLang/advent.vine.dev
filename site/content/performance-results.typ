@@ -11,9 +11,6 @@ To get the statistics necessary for the performance results, solutions must be r
 ```
 Interactions
   Total           715_953_136
-    Depth           2_107_457
-    Breadth               339
-    Speedup               253 cB
   Annihilate      168_591_018
   Commute                   0
   Copy            201_808_179
@@ -22,12 +19,17 @@ Interactions
   Call            254_961_858
   Branch           20_811_722
 
+Parallelism
+  Depth             2_107_457
+  Breadth                 339
+  Speedup                 253 cB
+
 Memory
   Heap             61_573_600 B
   Allocated    14_633_884_496 B
   Freed        14_633_884_496 B
 
 Performance
-  Time                 33_151 ms
-  Speed            21_596_307 IPS
-```
+  Time                 57_983 ms
+  Speed            12_347_479 IPS
+  ```
