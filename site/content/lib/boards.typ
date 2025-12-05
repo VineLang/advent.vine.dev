@@ -12,8 +12,12 @@
   ref(label("person_" + person), supplement: [#person])
 }
 
+#let show_number = (n) => {
+  str(n).codepoints().rev().chunks(3).map(x => x.join("")).join("_").rev()
+}
+
 #let best = (best, got, unit: []) => {
-  t.span(class: if got == best { "best" } else { "" })[#got#unit]
+  t.span(class: if got == best { "best" } else { "" })[#show_number(got)#unit]
 }
 
 #let board_overall_days() = [
@@ -26,8 +30,8 @@
     ..days.pairs().map(((day, stats)) => (
       [#show_day(day)],
       [#stats.solves.keys().len()],
-      [#stats.best_total],
-      [#stats.best_depth],
+      [#show_number(stats.best_total)],
+      [#show_number(stats.best_depth)],
       [#best(best_day_speedup, stats.speedup, unit: cB)],
     )).join(),
   )
